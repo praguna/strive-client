@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+h4{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2rem
+}
+hr{
+    color: black;
+    opacity:0.5;
+}
+nav{
+    height: 10vh;
+}
