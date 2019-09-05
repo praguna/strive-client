@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>Execution with Custom Test Case</h2>
+<mat-dialog-content class="mat-typography">
+  <textarea matInput id="test_case" placeholder="Test Cases"></textarea>
+  <div class="result">
+    <span id='output'>output window</span>
+    <img id="spinner" src="../../assets/loader.gif" height="5%" width="5%" style="display:none;margin-left: 45%;margin-top: 5%"/>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Exit</button>
+  <button mat-button (click)="showResult()" cdkFocusInitial>Run</button>
+</mat-dialog-actions>

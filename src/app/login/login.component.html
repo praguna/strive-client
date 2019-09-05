@@ -1,0 +1,31 @@
+<app-topbar></app-topbar>
+  <div class="login form-group">
+    <h2 class="login-header">Log in</h2>
+    <form [formGroup]="loginForm" class="login-container " (ngSubmit)="login()">
+  
+      <p [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
+        <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email" formControlName="email">
+      </p>
+  
+      <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
+        <div *ngIf="formControls.email.errors.required" class="alert alert-danger">Email is required</div>
+        <div *ngIf="formControls.email.errors.email" class="alert alert-danger">Email should be valid</div>
+      </div>
+  
+      <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+        <input type="password" class="form-control" placeholder="Password" formControlName="password">
+      </p>
+  
+      <div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
+        <div *ngIf="formControls.password.errors.required" class="alert alert-danger">Password</div>
+        <div *ngIf="formControls.password.errors.minlength" class="alert alert-danger">Password should have atleast 7 characters</div>
+      </div>
+  
+      <p>
+        <button [disabled]="signIn" type="submit" class="btn btn-primary">Sign In&nbsp;<img height="10px" width="10px" src="../../assets/loader.gif" [hidden]="!signIn"></button>
+      </p>
+      <div *ngIf="haserror" class="alert alert-danger">{{haserror}}</div>
+      <a class="btn btn-small" [routerLink]="['/register']"><u>Register</u></a>
+    </form>
+  </div>
+  

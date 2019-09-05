@@ -1,0 +1,50 @@
+<app-topbar></app-topbar>
+  <div class="login form-group">
+        <h2 class="login-header">Sign Up</h2>
+        <form [formGroup]="registerForm" class="login-container " (ngSubmit)="register()">
+      
+       <p [ngClass]="{ 'has-error': isSubmitted && formControls.username.errors }">
+            <input type="text" class="form-control" placeholder="Username" formControlName="username">
+        </p>
+        
+        <div *ngIf="isSubmitted && formControls.username.errors" class="help-block">
+        <div *ngIf="formControls.username.errors.required" class="alert alert-danger">Username is required</div>
+        </div>
+
+          <p [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
+            <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email" formControlName="email">
+          </p>
+          
+          <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
+            <div *ngIf="formControls.email.errors.required" class="alert alert-danger">Email is required</div>
+            <div *ngIf="formControls.email.errors.email" class="alert alert-danger">Email should be proper</div>
+          </div>
+      
+          <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+            <input type="password" class="form-control" placeholder="Password" formControlName="password">
+          </p>
+      
+          <div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
+            <div *ngIf="formControls.password.errors.required" class="alert alert-danger">Password is required</div>
+            <div *ngIf="formControls.password.errors.mustMatch" class="alert alert-danger">Passwords should Match</div>
+            <div *ngIf="formControls.password.errors.minlength" class="alert alert-danger">Password should be atleast 7 characters</div>
+        </div>
+
+
+          <p [ngClass]="{ 'has-error': isSubmitted && formControls.confirmpassword.errors }">
+                <input type="password" class="form-control" placeholder="Confirm Password" formControlName="confirmpassword">
+            </p>
+          
+              <div *ngIf="isSubmitted && formControls.confirmpassword.errors" class="help-block">
+                <div *ngIf="formControls.confirmpassword.errors.required" class="alert alert-danger">Confirm the Password</div>
+                <div *ngIf="formControls.confirmpassword.errors.mustMatch" class="alert alert-danger">Passwords should Match</div>
+            </div>
+       
+
+          <p>
+            <button [disabled]="signIn" type="submit" class="btn btn-primary">Register&nbsp;<img height="10px" width="10px" src="../../assets/loader.gif" [hidden]="!signIn"></button>
+          </p>
+          <div *ngIf="haserror" class="alert alert-danger">{{haserror}}</div>
+        </form>
+      </div>
+      

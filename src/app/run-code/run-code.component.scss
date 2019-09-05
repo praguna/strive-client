@@ -1,0 +1,27 @@
+textarea{
+    background-color: rgb(36, 147, 161);
+    min-height: 20vh;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    caret-color: white;
+}
+::placeholder{
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+cursor{
+    color:white;
+}
+.result{
+    margin-top: 10px;
+    background-color: rgb(70, 71, 71);
+    font-family: 'Courier New', Courier, monospace;
+    min-width: 20vw;
+    white-space: pre-line;
+    white-space: pre-wrap;
+    min-height: 20vh;
+    color: white; 
+}
+button{
+    background-color: rgb(216, 209, 204);
+}

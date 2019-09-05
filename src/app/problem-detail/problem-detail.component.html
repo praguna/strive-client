@@ -1,0 +1,58 @@
+<app-topbar></app-topbar>
+
+<div class="container-fluid"  style="width:100vw;height: 85vh;">
+    <as-split direction="horizontal">
+        <as-split-area minSize="100px">
+          <div [hidden]="!empty">
+              <img src="../../assets/loader.gif"/>
+              <p>Loading Problem Details...</p>
+          </div>
+          <div [hidden]="empty">
+                <button [routerLink]="['/problems']" class="btn btn-primary btn-sm"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Go Back</button>
+           <h4><b>{{problem_name}}</b></h4><p style="font-size: 15px">by {{problem.author}}<!--&emsp;attempts : {{detail.attempts}}&emsp;success : {{detail.success}}--></p>
+          <i><span style="font-size: 15px">Nitpick :</span> <p [innerHtml]="detail.background" style="font-size:15px"></p></i>
+           <p style="font-family: 'Courier New', Courier, monospace" [innerHtml]="detail.description"></p>
+       </div>
+          </as-split-area>
+        <as-split-area minSize="100px">
+            <mat-form-field>
+                <mat-label >Language</mat-label>
+                <mat-select [(ngModel)]="selectedLanguage" (ngModelChange)="setLanguage()" name="language">
+                  <mat-option *ngFor="let language of languages" [value]="language.value">
+                    {{language.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field>
+                  <mat-label >Theme</mat-label>
+                  <mat-select [(ngModel)]="selectedTheme" (ngModelChange)="setTheme()" name="theme">
+                    <mat-option *ngFor="let theme of themes" [value]="theme.value">
+                      {{theme.viewValue}}
+                    </mat-option>
+                  </mat-select>
+               </mat-form-field>
+              <mat-form-field>
+              <mat-label >FontSize</mat-label>
+              <mat-select [(ngModel)]="fontValue" (ngModelChange)="setSize()" name="font">
+                <mat-option *ngFor="let font of fontsizes" [value]="font.value">
+                  {{font.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <button type="button" (click)="submitCode()" style="background-color: green" class="btn btn-sm btn-primary"><i class="fa fa-cloud-upload" aria-hidden="true"></i> Submit</button> 
+            <button type="button" (click)="runCode()" class="btn btn-sm btn-primary"><i class="fa fa-play" aria-hidden="true"></i> Run</button> 
+            <button type="button" (click)="showSolution()" style="background-color: gray" class="btn btn-sm btn-primary"><i class="fa fa-eye" aria-hidden="true"></i> Solution</button> 
+            <ace-editor class="editor"
+            #editor
+            [(text)]="text"
+            [mode]="'java'"
+            [theme]="'monokai'"
+            [readOnly]="false"
+            [autoUpdateContent]="true"
+            [durationBeforeCallback]="333"
+            style="min-height: 70vh; width:100%; overflow: auto;margin: 5px 5px 5px 5px"
+          ></ace-editor>
+      </as-split-area>
+      </as-split>  
+
+</div>

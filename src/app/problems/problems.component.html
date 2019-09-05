@@ -1,0 +1,54 @@
+  <app-topbar></app-topbar>
+<div class="container-fluid">
+  <button (click)="logout()" style="float: right" class="btn btn-danger btn-sm" id="logout"><i class="fa fa-power-off" aria-hidden="true"></i>&nbsp;logout</button>
+</div>
+<div class="container-fluid">
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search for Problems to Practice">
+  </mat-form-field>
+  <div [hidden]="problems!=undefined" style="margin-left: 10vw">
+    <img height="60px" width="60px" src="../../assets/loader.gif"/>
+    <p>Loading Problems...</p>
+  </div>
+  <div class="mat-elevation-z8" [hidden]="problems==undefined">
+    <table mat-table [dataSource]="dataSource" matSort>
+  
+       <!-- ID Column -->
+       <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> #ID </th>
+          <td mat-cell id="index" *matCellDef="let element; let i = index;">{{i+1}}</td>
+        </ng-container>
+    
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th class="name" mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+          <td class="name" mat-cell *matCellDef="let row"><a [routerLink]="['/problems', row.name]">{{row.name}}</a></td>
+        </ng-container>
+    
+    
+        <!-- Tag Column -->
+        <ng-container matColumnDef="tag">
+          <th class="tag" mat-header-cell *matHeaderCellDef mat-sort-header> Tag </th>
+          <td class="tag" mat-cell *matCellDef="let row" [style.tag]="row.tag"> {{row.tag}} </td>
+        </ng-container>
+  
+      <!-- Company Column -->
+      <ng-container matColumnDef="company">
+        <th class="tag" mat-header-cell *matHeaderCellDef mat-sort-header> Company </th>
+        <td class="tag" mat-cell *matCellDef="let row" [style.tag]="row.company"> {{row.company}} </td>
+      </ng-container>
+      
+      <!--Difficulty Column-->
+      <ng-container matColumnDef="difficulty">
+          <th class="tag" mat-header-cell *matHeaderCellDef mat-sort-header> Level </th>
+          <td class="tag" mat-cell *matCellDef="let row" [style.tag]="row.company"> {{row.difficulty}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+        </tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[10, 15, 30, 50,100]"></mat-paginator>
+  </div>
+</div>
