@@ -22,7 +22,7 @@ Email : abcd@gmail.com     password : 1234567
 
 
 ### Interactive Coding Environment
-![code](images/coding environment.png)
+![code](images/coding_environment.png)
 
 
 ### Run Code
