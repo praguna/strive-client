@@ -1,27 +1,38 @@
 # Strive
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.1.
+This is the application which is the online coding interface.It makes use of mongodb database and jdoodle for executing code. 
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+##### Strive-Client : 
 
-## Code scaffolding
+ http://strive-application.s3-website.ap-south-1.amazonaws.com
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+##### Demo user:  
 
-## Build
+Email : abcd@gmail.com     password : 1234567
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+#### SnapShots
 
-## Running unit tests
+### Login Component
+![login](images/login.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+### Home Page to Search Problems
+![home](images/home.png)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+### Interactive Coding Environment
+![code](images/coding_environment.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+### Run Code
+![run](images/run.png)
+
+
+### view solution
+![solution](images/solution.png)
+
+### run against test cases
+
+![submit](images/submit.png)
+
