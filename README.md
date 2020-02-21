@@ -2,15 +2,6 @@
 
 This is the application which is the online coding interface.It makes use of mongodb database and jdoodle for executing code. 
 
-
-##### Strive-Client : 
-
- http://strive-application.s3-website.ap-south-1.amazonaws.com
-
-##### Demo user:  
-
-Email : abcd@gmail.com     password : 1234567
-
 #### SnapShots
 
 ### Login Component
