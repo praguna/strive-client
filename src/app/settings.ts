@@ -29,41 +29,41 @@ export const languageMap={
     "javascript":{version:"2",apivalue:"nodejs"}
 }
 export const starterCode={
-    "javascript":
-        `function solution(){
+    "javascript":`
+        function solution(){
             console.log("hello world")
         }
         solution()`,
-    "csharp":
-        `using System; 
+    "csharp":`
+        using System; 
          namespace HelloWorldApp { 
-            class Solution { 
-            static void Main(string[] args) {
-                    Console.WriteLine("Hello World!");              
-                    Console.ReadKey(); 
-                } 
-            } 
+         class Solution { 
+         static void Main(string[] args) {
+            Console.WriteLine("Hello World!");              
+            Console.ReadKey(); 
+             } 
+          } 
         } `,
-     "c_cpp":
-        `#include<iostream>
-        using namespace std;
-        int main(){
+     "c_cpp":`
+         #include<iostream>
+         using namespace std;
+         int main(){
             cout<<"hello"<<endl;
         }`,
-     "python":
-        `def solution():
+     "python":`
+        def solution():
             print("hello world")
          solution();
     `,
-    "java":
-        `public class Solution{
+    "java":`
+        public class Solution{
             public static void main(String args[]){
                 System.out.println("hello world");
             }
         }
         `,
-    "golang":
-        `package main
+    "golang":`
+        package main
         import "fmt"
         func main() {
             fmt.Println("hello world")
