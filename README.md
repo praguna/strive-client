@@ -1,7 +1,7 @@
 # Strive
 
 This is the application which is the online coding interface.It makes use of mongodb database and jdoodle for executing code. 
-run it using ng serve or npm start
+run it using ng serve.
 
 #### SnapShots
 
